@@ -1,0 +1,26 @@
+package blockchain;
+import java.security.*;
+import java.util.*;
+
+public class Transaction {
+	public String transactionId; // hash of the transaction 
+	public PublicKey sender; //sender address 
+	public PublicKey reciepient ; 
+	float value;
+	byte[] signature;  //to prevent any others from spending the fund
+			 // TransactionInput
+	ArrayList<TransactionInput> inputs = new  ArrayList<>();
+	ArrayList<TransactionOutput> outputs = new ArrayList<>();
+	
+	public static int sequence = 0;
+	
+	
+	public Transaction(PublicKey from,PublicKey to,float value,ArrayList<TransactionInput> input)
+	{
+		this.sender = from;
+		this.reciepient = to;
+		this.value = value;
+		this.inputs = input;
+	}
+
+}

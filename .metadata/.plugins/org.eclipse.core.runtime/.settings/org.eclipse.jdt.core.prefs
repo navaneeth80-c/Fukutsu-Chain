@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=21
+org.eclipse.jdt.core.compiler.compliance=21
+org.eclipse.jdt.core.compiler.release=enabled
+org.eclipse.jdt.core.compiler.source=21
+org.eclipse.jdt.core.userLibrary.bc=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/home/nirmoha/Codes/BuildYourEX/Crypto/MyFirstBlockChainInJava/bcprov-jdk18on-1.80.jar"/>\n</userlibrary>\n
+org.eclipse.jdt.core.userLibrary.gson_lib=<?xml version\="1.0" encoding\="UTF-8"?>\n<userlibrary systemlibrary\="false" version\="2">\n\t<archive path\="/home/nirmoha/Codes/BuildYourEX/Crypto/MyFirstBlockChainInJava/gson-2.6.2.jar"/>\n</userlibrary>\n

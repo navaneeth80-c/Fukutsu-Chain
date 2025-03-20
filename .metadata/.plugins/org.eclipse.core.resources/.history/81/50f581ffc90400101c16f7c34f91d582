@@ -1,0 +1,86 @@
+package blockchain;
+import com.google.gson.GsonBuilder;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+
+import java.security.Security;
+import java.util.ArrayList;
+public class BlockChain {
+	
+	public static ArrayList<Block> blockchain = new ArrayList<Block>();
+	private static int difficulty = 5;
+	
+	public static void main(String[] args)
+	{
+		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
+		Wallet walleetA = new Wallet();
+		Wallet walletB = new Wallet();
+		System.out.println("private and public key!!");
+		/*
+		//System.out.println("ello");
+		/*
+		 // it was a test!!
+		Block gennesisBlock  = new Block("This is block 1","0");
+		System.out.println("block 1: "+gennesisBlock.hash);
+		
+		Block secondBlock = new Block("this is second Block",gennesisBlock.hash);
+		System.out.println("block 2: "+secondBlock.hash);
+		
+		Block thirdBlock = new Block("this is my third block mate!!",secondBlock.hash);
+		System.out.println("block 3: "+thirdBlock.hash);
+		
+		blockchain.add(new Block("This is block 1","0"));
+		blockchain.get(0).mineBlock(difficulty);
+		blockchain.add(new Block("this is block 2",blockchain.get(blockchain.size()-1).hash));
+		blockchain.get(1).mineBlock(difficulty);
+		blockchain.add(new Block("this is block 3",blockchain.get(blockchain.size()-1).hash));
+		blockchain.get(2).mineBlock(difficulty);
+	//	blockchain.get(0).previousHash="ancdf"; test to make it hash wrong !!
+		if(isChainValid()) {
+		String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
+	
+			System.out.println(blockchainJson);
+			}
+			*/
+		System.out.println("int he chain");	
+							
+	}
+	
+	public static boolean isChainValid()
+	{
+		
+		
+		Block currentBlock ;
+		Block previousBlock;
+		String hashTarget = new String (new char[difficulty]).replace('\0', '0');
+		
+		
+		for(int i=1;i< blockchain.size();i++)
+		{
+			currentBlock = blockchain.get(i);
+			previousBlock = blockchain.get(i-1);
+			
+			if(!currentBlock.hash.equals(currentBlock.caclculateHash()))
+			{
+				System.out.println(i+"->"+(i-1)+"not equal");
+				System.out.println("block id: "+i);
+				return false;
+			}
+			
+			if(!previousBlock.hash.equals(previousBlock.caclculateHash()))
+			{
+				
+				System.out.println(i+"->"+(i-1)+"not equal");
+				System.out.println("block id: "+(i-1));
+				return false;
+			}
+			if(!currentBlock.hash.substring(0,difficulty).equals(hashTarget))
+			{
+				System.out.println("block is not mined!!"); // if first few digits of the hash is not 0000..
+				return false;
+			}
+		}
+		return true;
+	}
+
+}

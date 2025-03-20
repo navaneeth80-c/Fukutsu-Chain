@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;blockchain.Transactions&apos; to &apos;Transaction&apos;&#x0A;- Original project: &apos;BlockChain&apos;&#x0A;- Original element: &apos;blockchain.Transactions&apos;&#x0A;- Renamed element: &apos;blockchain.Transaction&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Transactions&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;blockchain{Transactions.java[Transactions" matchStrategy="1" name="Transaction" qualified="false" references="true" similarDeclarations="false" stamp="1742299856775" textual="false" version="1.0"/>
+</session>
